@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editando</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+
+    <form action="/edit/" method="post">
+        <input type="hidden" value="<%= producto.id %>" name="id">
+        <label for="code">Código</label>
+        <input type="text" name="codigo" value="<%= producto.code %>"
+        placeholder="Código del Producto" required>
+        <label for="name">Nombre</label>
+        <input type="text" name="nombre" value="<%= producto.name %>"
+        placeholder="Nombre del Producto" required>
+        <label for="brand">genero</label>
+        <input type="text" name="genero" value="<%= producto.brand %>"
+        placeholder="Marca del Producto" required>
+         <label for="description">Descripción</label>
+        <textarea name="descripcion" 
+        placeholder="Descripción del Producto" required><%= producto.description %></textarea>
+        <label for="price">Precio</label>
+        <input type="number" name="Precio" value="<%= producto.price %>"
+        placeholder="Precio del Producto" required>
+        <label for="category_id">Categoría</label>
+        <select name="category_id" required>
+            <option value="1">romance</option>
+            <option value="2">accion</option>
+            <option value="3">fantasia</option>
+        </select>
+        <input type="submit" value="Editar">
+
+
+    </form>
+
+</body>
+</html>
